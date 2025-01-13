@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+
+    <form action="/friends", method="POST">
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder = "Friend name" name="name">
+      </div>
+
+    <br>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+    <br/>
+
+    {% for f in friends %}
+
+        <p>
+            <a href="/update/{{ f.id }}" class="link-secondary">{{ f.name }}</a>
+            <a href="/delete/{{ f.id }}" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">delete</a>
+
+        </p>
+    {% endfor %}
+
+{% endblock %}
+
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+
+    <form action="/update/{{ friend_to_update.id }}", method="POST">
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder = "Friend name" name="name" value = {{ friend_to_update.name }}>
+      </div>
+
+    <br>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+    <br/>
+
+
+{% endblock %}

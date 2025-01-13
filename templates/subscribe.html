@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+<h1>Subscribe to my newsletter:</h1>
+    {% if error_statement != '' %}
+        <div class="alert alert-warning" role="alert">
+        {{ error_statement }}
+        </div>
+    {% endif %}
+
+    <form action="/success", method="POST">
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder = "First name" name="first_name" value="{{ first_name }}">
+      </div>
+      <div class="mb-3">
+      <input type="text" class="form-control" id="exampleInputEmail1" placeholder = "Last name" name = "last_name" value="{{last_name}}">
+    </div>
+
+    <div class="mb-3">
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder = "email" name="email" aria-describedby="emailHelp" value="{{ email }}">
+    </div>
+    <br>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+
+{% endblock %}
+
+

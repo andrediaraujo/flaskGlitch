@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <h1>Hello World</h1>
+    <ol>
+    {% for favorite in favorite_pizza %}
+        <li>
+        {{favorite}}
+        </li>
+
+    {% endfor %}
+    </ol>
+
+{% endblock %}
+
+
